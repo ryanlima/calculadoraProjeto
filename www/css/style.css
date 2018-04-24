@@ -433,6 +433,11 @@ input {
     overflow: hidden;
     
 }
+
+#keypad3 {
+   padding: 1px;    
+}
+
 div.horizontal.display {
     border: none;
     margin-bottom: 20px;

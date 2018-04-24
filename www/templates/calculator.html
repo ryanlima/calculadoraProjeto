@@ -4,16 +4,126 @@
 
 <!--calcCtrl = CalculatorController / app.controllers = CalculatorApp-->
 <div bg-app="app.controllers" ng-controller="calcCtrl">
-    <input id="displayPanel" type="number" ng-model="a">
-    <input id="displayPanel"  type="number" ng-model="b">
-    <p><select ng-model="operator">
-            <option>+</option>
-            <option>*</option>
-            <option>-</option>
-            <option>/</option>
-         </select></p>
-      <p>{{ result() }}</p>
+    <div class="horizontal" id="keypad2">
+        <button ng-click="tab=1" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
+        <button ng-click="tab=2" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
+        <button ng-click="tab=3" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
+        <button ng-click="tab=4" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
+    </div>
+        <div class="horizontal display" ng-init="tab = 1" ng-show="tab == 1" >
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input id="keypad2" placeholder="Numero DEC" type="number" ng-model="a">
+                </label>
+                <label class="item item-input">
+                    <input id="keypad2" placeholder="Numero DEC2" type="number" ng-model="b">
+                </label>
+            </div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  OPERADOR
+                </div>
+                <select ng-model="operator">
+                    <option>+</option>
+                    <option>*</option>
+                    <option>-</option>
+                    <option>/</option>
+                </select>
+              </label>
+              <div id="keypad2">
+                <h1>{{result()}}</h1>
+              </div>
+              
+      </div>
+      <!--Binario-->
+     
+          <div class="horizontal display" ng-show="tab == 2" >
+              <div class="list list-inset">
+                  <label class="item item-input">
+                      <input id="keypad2" placeholder="Numero Bin" type="number" ng-model="a">
+                  </label>
+                  <label class="item item-input">
+                      <input id="keypad2" placeholder="Numero Bin2" type="number" ng-model="b">
+                  </label>
+              </div>
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                    OPERADOR
+                  </div>
+                  <select ng-model="operator">
+                      <option>+</option>
+                      <option>*</option>
+                      <option>-</option>
+                      <option>/</option>
+                  </select>
+                </label>
+                <div id="keypad2">
+                  <h1>{{bin()}}</h1>
+                </div>
+            </div>   
+        
 
+        <!--Octal-->
+  
+          
+          <div class="horizontal display" ng-show="tab == 3" >
+                <div class="list list-inset">
+                    <label class="item item-input">
+                        <input id="keypad2" placeholder="Numero Oct" type="number" ng-model="a">
+                    </label>
+                    <label class="item item-input">
+                        <input id="keypad2" placeholder="Numero Oct2" type="number" ng-model="b">
+                    </label>
+                </div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      OPERADOR
+                    </div>
+                    <select ng-model="operator">
+                        <option>+</option>
+                        <option>*</option>
+                        <option>-</option>
+                        <option>/</option>
+                    </select>
+                  </label>
+                  <div id="keypad2">
+                    <h1>{{oct()}}</h1>
+                  </div>
+            </div>
+
+          <!--Hexa-->
+    
+           
+              <div class="horizontal display" ng-show="tab == 4" >
+                  <div class="list list-inset">
+                      <label class="item item-input">
+                          <input id="keypad2" placeholder="Numero Hex" type="text" ng-model="a">
+                      </label>
+                      <label class="item item-input">
+                          <input id="keypad2" placeholder="Numero Hex2" type="text" ng-model="b">
+                      </label>
+                  </div>
+                  <label class="item item-input item-select">
+                      <div class="input-label">
+                        OPERADOR
+                      </div>
+                      <select ng-model="operator">
+                          <option>+</option>
+                          <option>*</option>
+                          <option>-</option>
+                          <option>/</option>
+                      </select>
+                    </label>
+                    <div id="keypad2" >
+                      <h1>{{hex()}}</h1>
+                    </div>
+             </div>       
+            
+             
+    </div>
+    
+    
+    
 </div>
 <!--
     <div id="keypad">

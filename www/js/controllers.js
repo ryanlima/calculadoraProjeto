@@ -21,7 +21,100 @@ angular.module('app.controllers', [])
     if ($scope.operator == '/') {
         return $scope.a / $scope.b;
     }
+
 };
+
+
+    $scope.resultBin = function() {
+        if ($scope.operator == '+') {
+            return parseInt($scope.a,(2)) + parseInt($scope.b,(2));
+        }
+        if ($scope.operator == '-') {
+            return parseInt($scope.a,(2)) - parseInt($scope.b,(2));
+        }
+        if ($scope.operator == '*') {
+            return parseInt($scope.a,(2)) * parseInt($scope.b,(2));
+        }
+        if ($scope.operator == '/') {
+            return parseInt($scope.a,(2)) / parseInt($scope.b,(2));
+        }
+    
+    };
+    $scope.bin = function() {
+            if ($scope.operator == '+') {
+                return parseInt($scope.resultBin() ,10).toString(2);
+            }
+            if ($scope.operator == '-') {
+                return parseInt($scope.resultBin() ,10).toString(2);
+            }
+            if ($scope.operator == '*') {
+                return parseInt($scope.resultBin() ,10).toString(2);
+            }
+            if ($scope.operator == '/') {
+                return parseInt($scope.resultBin() ,10).toString(2);
+            }
+        };
+
+        //octal
+        $scope.resultOct = function() {
+            if ($scope.operator == '+') {
+                return parseInt($scope.a,(8)) + parseInt($scope.b,(8));
+            }
+            if ($scope.operator == '-') {
+                return parseInt($scope.a,(8)) - parseInt($scope.b,(8));
+            }
+            if ($scope.operator == '*') {
+                return parseInt($scope.a,(8)) * parseInt($scope.b,(8));
+            }
+            if ($scope.operator == '/') {
+                return parseInt($scope.a,(8)) / parseInt($scope.b,(8));
+            }
+        
+        };
+        $scope.oct = function() {
+                if ($scope.operator == '+') {
+                    return parseInt($scope.resultOct() ,10).toString(8);
+                }
+                if ($scope.operator == '-') {
+                    return parseInt($scope.resultOct() ,10).toString(8);
+                }
+                if ($scope.operator == '*') {
+                    return parseInt($scope.resultOct() ,10).toString(8);
+                }
+                if ($scope.operator == '/') {
+                    return parseInt($scope.resultOct() ,10).toString(8);
+                }
+            };
+            //hexa
+            $scope.resultHex = function() {
+                if ($scope.operator == '+') {
+                    return parseInt($scope.a,(16)) + parseInt($scope.b,(16));
+                }
+                if ($scope.operator == '-') {
+                    return parseInt($scope.a,(16)) - parseInt($scope.b,(16));
+                }
+                if ($scope.operator == '*') {
+                    return parseInt($scope.a,(16)) * parseInt($scope.b,(16));
+                }
+                if ($scope.operator == '/') {
+                    return parseInt($scope.a,(16)) / parseInt($scope.b,(16));
+                }
+            
+            };
+            $scope.hex = function() {
+                    if ($scope.operator == '+') {
+                        return parseInt($scope.resultHex() ,10).toString(16).toUpperCase();
+                    }
+                    if ($scope.operator == '-') {
+                        return parseInt($scope.resultHex() ,10).toString(16).toUpperCase();
+                    }
+                    if ($scope.operator == '*') {
+                        return parseInt($scope.resultHex() ,10).toString(16).toUpperCase();
+                    }
+                    if ($scope.operator == '/') {
+                        return parseInt($scope.resultHex() ,10).toString(16).toUpperCase();
+                    }
+                };
 
     $scope.zero = function() {$scope.screen+="0";};
     $scope.one = function() {$scope.screen+="1";};

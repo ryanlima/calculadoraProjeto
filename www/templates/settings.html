@@ -1,11 +1,11 @@
 
-<ion-view style="" class=" " id="page12" title="Settings">
+<ion-view style="" class=" " id="page12" title="Conversor">
     <ion-content class="has-header" padding="false"  >
             <div class="horizontal" id="keypad2">
-                    <button ng-click="tab=1" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
-                    <button ng-click="tab=2" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
-                    <button ng-click="tab=3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
-                    <button ng-click="tab=4" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
+                    <button ng-click="tab=1" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
+                    <button ng-click="tab=2" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
+                    <button ng-click="tab=3" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
+                    <button ng-click="tab=4" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
             </div>
             <div class="horizontal display" id="keypad2">
                 <input ng-show="tab == 1 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
