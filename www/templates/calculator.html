@@ -2,21 +2,33 @@
 
   <ion-content class="has-header" padding="false">
 
+<!--calcCtrl = CalculatorController / app.controllers = CalculatorApp-->
+<div bg-app="app.controllers" ng-controller="calcCtrl">
+    <input id="displayPanel" type="number" ng-model="a">
+    <input id="displayPanel"  type="number" ng-model="b">
+    <p><select ng-model="operator">
+            <option>+</option>
+            <option>*</option>
+            <option>-</option>
+            <option>/</option>
+         </select></p>
+      <p>{{ result() }}</p>
 
-
+</div>
+<!--
     <div id="keypad">
   
       <div class="horizontal display">
         <input ng-model="screen" id="displayPanel" type="text" value="0"/>
       </div>
-  <!--
+  
     <div class="horizontal">
         <div ng-click="seven()" id="key7" data-rnc-tag="7" class="key">7</div>
         <div ng-click="eigth()" id="key8" data-rnc-tag="8" class="key">8</div>
         <div ng-click="bi()" id="keyBi" class="key operation-convert">BI</div>
         <div ng-click="dec()" id="keyDec" class="key operation-key">DEC</div>
       </div>
-    --> 
+   
       <div class="horizontal">
         <div ng-click="seven()" id="key7" data-rnc-tag="7" class="key">7</div>
         <div ng-click="eigth()" id="key8" data-rnc-tag="8" class="key">8</div>
@@ -47,7 +59,7 @@
     </div>
 
 
-
+ --> 
 
 
   </ion-content>

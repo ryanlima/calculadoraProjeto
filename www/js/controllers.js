@@ -3,8 +3,26 @@ angular.module('app.controllers', [])
   .controller('calcCtrl', function($scope) {
 
     $scope.screen="";
+    /*$scope.numero1 = '0';
+    $scope.numero2 = null;
+    $scope.resultado = null;
+    $scope.operacao = null;
+    */
+   $scope.result = function() {
+    if ($scope.operator == '+') {
+        return $scope.a + $scope.b;
+    }
+    if ($scope.operator == '-') {
+        return $scope.a - $scope.b;
+    }
+    if ($scope.operator == '*') {
+        return $scope.a * $scope.b;
+    }
+    if ($scope.operator == '/') {
+        return $scope.a / $scope.b;
+    }
+};
 
-    
     $scope.zero = function() {$scope.screen+="0";};
     $scope.one = function() {$scope.screen+="1";};
     $scope.two = function() {$scope.screen+="2";};

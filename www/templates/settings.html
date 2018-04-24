@@ -1,6 +1,123 @@
 
 <ion-view style="" class=" " id="page12" title="Settings">
     <ion-content class="has-header" padding="false"  >
+            <div class="horizontal" id="keypad2">
+                    <button ng-click="tab=1" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
+                    <button ng-click="tab=2" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
+                    <button ng-click="tab=3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
+                    <button ng-click="tab=4" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
+            </div>
+            <div class="horizontal display" id="keypad2">
+                <input ng-show="tab == 1 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
+                <input ng-show="tab == 2 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="binario" >   
+                <input ng-show="tab == 3 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="octal" >   
+                <input ng-show="tab == 4 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="hexa" >   
+        
+                <input ng-show="tab != 1 " type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" >
+                <input ng-show="tab != 2 " type="text" placeholder="Binario" id="displayPanel" ng-model="binario">
+                <input ng-show="tab !=3 " type="text" placeholder="Octal" id="displayPanel" ng-model="octal">
+                <input ng-show="tab !=4" type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa">          
+            </div>
+        
+           
+        
+         
+            <div id="keypad2" ng-init="tab = 1 " ng-show="tab == 1">
+                <div id="keypad2">
+                    <button ng-click="seven()" id="key7" data-rnc-tag="7"   class="button button-calm">7</button>  
+                    <button ng-click="eigth()" id="key8" data-rnc-tag="8"   class="button button-calm">8</button>
+                    <button ng-click="nine()"  id="key9" data-rnc-tag="9"   class="button button-calm">9</button>
+                     
+                </div>
+                
+                <div id="keypad2">
+                    <button ng-click="four()"  id="key4" data-rnc-tag="4"   class="button button-calm">4</button>          
+                    <button ng-click="five()"  id="key5" data-rnc-tag="5"   class="button button-calm">5</button>
+                    <button ng-click="six()"   id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
+                </div>
+                <div id="keypad2">
+                         
+                    <button ng-click="one()"   id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
+                    <button ng-click="two()"   id="key2" data-rnc-tag="2"   class="button button-calm">2</button>
+                    <button ng-click="three()" id="key3" data-rnc-tag="3"   class="button button-calm">3</button>    
+                </div>
+                <div id="keypad2">
+                    <button ng-click="zero()"  id="keyPlusMinus"            class="button button-calm">0</button>    
+                    <button ng-click="clear()" id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>      
+                </div>
+                
+                
+                
+            </div> 
+            <div id="keypad2" ng-init="bin = false" ng-show="tab == 2">
+                <div id="keypad2">
+                        <button ng-click="zeroBin()"id="key0" data-rnc-tag="0"  class="button button-calm">0</button>     
+                        <button ng-click="umBin()"  id="key1" data-rnc-tag="1"  class="button button-calm">1</button>
+                        <button ng-click="clear()"  id="keyC" data-rnc-tag="C"  class="button button-calm">CE</button>  
+                </div>
+                
+            </div> 
+            <div id="keypad2" ng-init="octa = false" ng-show="tab == 3">
+             
+                <div id="keypad2">
+                        <button ng-click="seteOctal()"  id="key7" data-rnc-tag="7"   class="button button-calm">7</button>              
+                        <button ng-click="seisOctal()"  id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
+                        <button ng-click="cincoOctal()" id="key5" data-rnc-tag="5"   class="button button-calm">5</button>         
+                </div>
+                <div id="keypad2">
+                        <button ng-click="tresOctal()"  id="key3" data-rnc-tag="3"   class="button button-calm">3</button>
+                        <button ng-click="quatroOctal()"id="key4" data-rnc-tag="4"   class="button button-calm">4</button>
+                        <button ng-click="doisOctal()"  id="key2" data-rnc-tag="2"   class="button button-calm">2</button>      
+                </div>
+                
+                <div id="keypad2">
+                    <button ng-click="umOctal()"    id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
+                    <button ng-click="zeroOctal()"  id="key0" data-rnc-tag="0"   class="button button-calm">0</button>        
+                    <button ng-click="clear()"      id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>  
+                </div>
+                
+        
+              
+            
+            </div>
+            <div id="keypad2" ng-init="hexadeci = false" ng-show="tab == 4">
+              
+                
+               
+                
+                <div >
+                        <button ng-click="cHexade()"     id="keyC" data-rnc-tag="C"   class="button button-calm">C</button>
+                        <button ng-click="dHexade()"     id="keyD" data-rnc-tag="D"   class="button button-calm">D</button>
+                        <button ng-click="eHexade()"     id="keyE" data-rnc-tag="E"   class="button button-calm">E</button> 
+                        <button ng-click="fHexade()"     id="keyF" data-rnc-tag="F"   class="button button-calm">F</button> 
+                        
+                </div>  
+                <div >
+                        <button ng-click="oitoHexade()"  id="key8" data-rnc-tag="8"   class="button button-calm">8</button>
+                        <button ng-click="noveHexade()"  id="key9" data-rnc-tag="9"   class="button button-calm">9</button>
+                        <button ng-click="aHexade()"     id="keyA" data-rnc-tag="A"   class="button button-calm">A</button>
+                        <button ng-click="bHexade()"     id="keyB" data-rnc-tag="B"   class="button button-calm">B</button>
+                </div>  
+                <div >
+                        <button ng-click="quatroHexade()"id="key4" data-rnc-tag="4"   class="button button-calm">4</button>          
+                        <button ng-click="cincoHexade()" id="key5" data-rnc-tag="5"   class="button button-calm">5</button>
+                        <button ng-click="seisHexade()"  id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
+                        <button ng-click="seteHexade()"  id="key7" data-rnc-tag="7"   class="button button-calm">7</button>
+                
+                </div>  
+                <div >
+                        <button ng-click="zeroHexade()"  id="keyPlusMinus"            class="button button-calm">0</button>     
+                        <button ng-click="umHexade()"    id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
+                        <button ng-click="doisHexade()"  id="key2" data-rnc-tag="2"   class="button button-calm">2</button>
+                        <button ng-click="tresHexade()"  id="key3" data-rnc-tag="3"   class="button button-calm">3</button>
+                
+                </div>  
+                <div id="keypad2">
+                        <button ng-click="clear()"       id="keyC" data-rnc-tag="C"   class="button button-calm">CLEAR</button>
+                </div>
+            </div-->
+    </ion-content>
+</ion-view>
 
         
 <!--  
@@ -20,121 +137,6 @@
             ng-model="hexa">             
     </div> 
 -->
-    <div class="horizontal" id="keypad2">
-            <button ng-click="tab=1" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
-            <button ng-click="tab=2" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
-            <button ng-click="tab=3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
-            <button ng-click="tab=4" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
-    </div>
-    <div class="horizontal display" id="keypad2">
-        <input ng-show="tab == 1 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
-        <input ng-show="tab == 2 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="binario" >   
-        <input ng-show="tab == 3 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="octal" >   
-        <input ng-show="tab == 4 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="hexa" >   
+  
 
-        <input ng-show="tab != 1 " type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" >
-        <input ng-show="tab != 2 " type="text" placeholder="Binario" id="displayPanel" ng-model="binario">
-        <input ng-show="tab !=3 " type="text" placeholder="Octal" id="displayPanel" ng-model="octal">
-        <input ng-show="tab !=4" type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa">          
-    </div>
 
-   
-
- 
-    <div id="keypad2" ng-init="tab = 1 " ng-show="tab == 1">
-        <div id="keypad2">
-            <button ng-click="seven()" id="key7" data-rnc-tag="7"   class="button button-calm">7</button>  
-            <button ng-click="eigth()" id="key8" data-rnc-tag="8"   class="button button-calm">8</button>
-            <button ng-click="nine()"  id="key9" data-rnc-tag="9"   class="button button-calm">9</button>
-             
-        </div>
-        
-        <div id="keypad2">
-            <button ng-click="four()"  id="key4" data-rnc-tag="4"   class="button button-calm">4</button>          
-            <button ng-click="five()"  id="key5" data-rnc-tag="5"   class="button button-calm">5</button>
-            <button ng-click="six()"   id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
-        </div>
-        <div id="keypad2">
-                 
-            <button ng-click="one()"   id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
-            <button ng-click="two()"   id="key2" data-rnc-tag="2"   class="button button-calm">2</button>
-            <button ng-click="three()" id="key3" data-rnc-tag="3"   class="button button-calm">3</button>    
-        </div>
-        <div id="keypad2">
-            <button ng-click="zero()"  id="keyPlusMinus"            class="button button-calm">0</button>    
-            <button ng-click="clear()" id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>      
-        </div>
-        
-        
-        
-    </div> 
-    <div id="keypad2" ng-init="bin = false" ng-show="tab == 2">
-        <div id="keypad2">
-                <button ng-click="zeroBin()"id="key0" data-rnc-tag="0"  class="button button-calm">0</button>     
-                <button ng-click="umBin()"  id="key1" data-rnc-tag="1"  class="button button-calm">1</button>
-                <button ng-click="clear()"  id="keyC" data-rnc-tag="C"  class="button button-calm">CE</button>  
-        </div>
-        
-    </div> 
-    <div id="keypad2" ng-init="octa = false" ng-show="tab == 3">
-     
-        <div id="keypad2">
-                <button ng-click="seteOctal()"  id="key7" data-rnc-tag="7"   class="button button-calm">7</button>              
-                <button ng-click="seisOctal()"  id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
-                <button ng-click="cincoOctal()" id="key5" data-rnc-tag="5"   class="button button-calm">5</button>         
-        </div>
-        <div id="keypad2">
-                <button ng-click="tresOctal()"  id="key3" data-rnc-tag="3"   class="button button-calm">3</button>
-                <button ng-click="quatroOctal()"id="key4" data-rnc-tag="4"   class="button button-calm">4</button>
-                <button ng-click="doisOctal()"  id="key2" data-rnc-tag="2"   class="button button-calm">2</button>      
-        </div>
-        
-        <div id="keypad2">
-            <button ng-click="umOctal()"    id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
-            <button ng-click="zeroOctal()"  id="key0" data-rnc-tag="0"   class="button button-calm">0</button>        
-            <button ng-click="clear()"      id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>  
-        </div>
-        
-
-      
-    
-    </div>
-    <div id="keypad2" ng-init="hexadeci = false" ng-show="tab == 4">
-      
-        
-       
-        
-        <div >
-                <button ng-click="cHexade()"     id="keyC" data-rnc-tag="C"   class="button button-calm">C</button>
-                <button ng-click="dHexade()"     id="keyD" data-rnc-tag="D"   class="button button-calm">D</button>
-                <button ng-click="eHexade()"     id="keyE" data-rnc-tag="E"   class="button button-calm">E</button> 
-                <button ng-click="fHexade()"     id="keyF" data-rnc-tag="F"   class="button button-calm">F</button> 
-                
-        </div>  
-        <div >
-                <button ng-click="oitoHexade()"  id="key8" data-rnc-tag="8"   class="button button-calm">8</button>
-                <button ng-click="noveHexade()"  id="key9" data-rnc-tag="9"   class="button button-calm">9</button>
-                <button ng-click="aHexade()"     id="keyA" data-rnc-tag="A"   class="button button-calm">A</button>
-                <button ng-click="bHexade()"     id="keyB" data-rnc-tag="B"   class="button button-calm">B</button>
-        </div>  
-        <div >
-                <button ng-click="quatroHexade()"id="key4" data-rnc-tag="4"   class="button button-calm">4</button>          
-                <button ng-click="cincoHexade()" id="key5" data-rnc-tag="5"   class="button button-calm">5</button>
-                <button ng-click="seisHexade()"  id="key6" data-rnc-tag="6"   class="button button-calm">6</button>
-                <button ng-click="seteHexade()"  id="key7" data-rnc-tag="7"   class="button button-calm">7</button>
-        
-        </div>  
-        <div >
-                <button ng-click="zeroHexade()"  id="keyPlusMinus"            class="button button-calm">0</button>     
-                <button ng-click="umHexade()"    id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
-                <button ng-click="doisHexade()"  id="key2" data-rnc-tag="2"   class="button button-calm">2</button>
-                <button ng-click="tresHexade()"  id="key3" data-rnc-tag="3"   class="button button-calm">3</button>
-        
-        </div>  
-        <div id="keypad2">
-                <button ng-click="clear()"       id="keyC" data-rnc-tag="C"   class="button button-calm">CLEAR</button>
-        </div>
-    </div>
-
-    </ion-content>
-</ion-view>
