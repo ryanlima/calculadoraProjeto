@@ -279,40 +279,39 @@ angular.module('app.controllers', [])
   .controller('supportCtrl', function($scope) {
 
 
-   $scope.screenA="";
-   $scope.screenB="";
+    $scope.screen="";
 
+    $scope.zero = function() {$scope.screen+="0";};
+    $scope.one = function() {$scope.screen+="1";};
+    $scope.two = function() {$scope.screen+="2";};
+    $scope.three = function() {$scope.screen+="3";};
+    $scope.four = function() {$scope.screen+="4";};
+    $scope.five = function() {$scope.screen+="5";};
+    $scope.six = function() {$scope.screen+="6";};
+    $scope.seven = function() {$scope.screen+="7";};
+    $scope.eigth = function() {$scope.screen+="8";};
+    $scope.nine = function() {$scope.screen+="9";};
+    $scope.ponto = function() {$scope.screen+=".";};
+    $scope.clear = function() {$scope.screen="";};
 
-   $scope.zeroA = function() {$scope.screenA+="0";};
-   $scope.oneA = function() {$scope.screenA+="1";};
+    $scope.plus = function() {$scope.screen+="+";};
+    $scope.minus = function() {$scope.screen+="-";};
+    $scope.multiply = function() {$scope.screen+="*";};
+    $scope.divide = function() {$scope.screen+="/";};
+    $scope.bin = function() {
+        $scope.screen = parseInt($scope.screen, 10).toString(2);
+    };
 
-   $scope.zeroB = function() {$scope.screenB+="0";};
-   $scope.oneB = function() {$scope.screenB+="1";};
+    $scope.oct = function() {
+        $scope.screen = parseInt($scope.screen, 10).toString(8);
+    };
 
-     // função do calculo//
-  $scope.result = function() {
-    if ($scope.operator == '+') {
-        return parseInt($scope.screenA, (2)) + parseInt($scope.screenB, (2));
-     
-    }
-    if ($scope.operator == '-') {
-        return $scope.screenA - $scope.screenB;
-    }
-    if ($scope.operator == '*') {
-        return $scope.screenA * $scope.screenB;
-    }
-    if ($scope.operator == '/') {
-        return $scope.screenA / $scope.screenB;
-    }
-};
+    $scope.hex = function() {
+        $scope.screen = parseInt($scope.screen, 10).toString(16).toUpperCase();
+    };
 
-$scope.screen = function() {
-if ($scope.operator == '+') {
-   return parseInt($scope.result() ,10).toString(2);}
-};
-  
-    
-     
-    });  
+   $scope.equal=function(){$scope.screen=eval($scope.screen);};
+
+  });  
 
  

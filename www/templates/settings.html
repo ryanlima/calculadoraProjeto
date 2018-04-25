@@ -8,21 +8,22 @@
                     <button ng-click="tab=4" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
             </div>
             <div class="horizontal display" id="keypad2">
-                <input ng-show="tab == 1 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
-                <input ng-show="tab == 2 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="binario" >   
-                <input ng-show="tab == 3 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="octal" >   
-                <input ng-show="tab == 4 " type="text" placeholder="Numero Digitado" id="displayPanel" ng-model="hexa" >   
+                <!--input ng-show="tab == 1 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
+                <input ng-show="tab == 2 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="binario" >   
+                <input ng-show="tab == 3 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="octal" >   
+                <input ng-show="tab == 4 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="hexa" -->   
         
-                <input ng-show="tab != 1 " type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" >
-                <input ng-show="tab != 2 " type="text" placeholder="Binario" id="displayPanel" ng-model="binario">
-                <input ng-show="tab !=3 " type="text" placeholder="Octal" id="displayPanel" ng-model="octal">
-                <input ng-show="tab !=4" type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa">          
+                <input  type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" >
+                <input  type="text" placeholder="Binario" id="displayPanel" ng-model="binario">
+                <input  type="text" placeholder="Octal" id="displayPanel" ng-model="octal">
+                <input  type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa">          
             </div>
         
            
         
          
             <div id="keypad2" ng-init="tab = 1 " ng-show="tab == 1">
+            
                 <div id="keypad2">
                     <button ng-click="seven()" id="key7" data-rnc-tag="7"   class="button button-calm">7</button>  
                     <button ng-click="eigth()" id="key8" data-rnc-tag="8"   class="button button-calm">8</button>
