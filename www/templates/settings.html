@@ -1,11 +1,12 @@
 
-<ion-view style="" class=" " id="page12" title="Conversor">
+<ion-view class=" " id="page12" title="Conversor">
     <ion-content class="has-header" padding="false"  >
             <div class="horizontal" id="keypad2">
                     <button ng-click="tab=1" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 1}">DEC</button>
                     <button ng-click="tab=2" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 2}">BIN</button>
                     <button ng-click="tab=3" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 3}">OCT</button>
                     <button ng-click="tab=4" id="keypad3" class="button button-calm" ng-class="{'active' : tab == 4}">HEX</button>
+                    <button ng-click="clear()" id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>
             </div>
             <div class="horizontal display" id="keypad2">
                 <!--input ng-show="tab == 1 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="decimal" >     
@@ -13,10 +14,10 @@
                 <input ng-show="tab == 3 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="octal" >   
                 <input ng-show="tab == 4 " type="number" placeholder="Numero Digitado" id="displayPanel" ng-model="hexa" -->   
         
-                <input  type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" >
-                <input  type="text" placeholder="Binario" id="displayPanel" ng-model="binario">
-                <input  type="text" placeholder="Octal" id="displayPanel" ng-model="octal">
-                <input  type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa">          
+                <input  type="text" placeholder="Decimal" id="displayPanel" ng-model="decimal" readonly>
+                <input  type="text" placeholder="Binario" id="displayPanel" ng-model="binario" readonly>
+                <input  type="text" placeholder="Octal" id="displayPanel" ng-model="octal" readonly>
+                <input  type="text"  placeholder="Hexadecimal" id="displayPanel" ng-model="hexa" readonly>          
             </div>
         
            
@@ -44,7 +45,7 @@
                 </div>
                 <div id="keypad2">
                     <button ng-click="zero()"  id="keyPlusMinus"            class="button button-calm">0</button>    
-                    <button ng-click="clear()" id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>      
+                       
                 </div>
                 
                 
@@ -54,7 +55,6 @@
                 <div id="keypad2">
                         <button ng-click="zeroBin()"id="key0" data-rnc-tag="0"  class="button button-calm">0</button>     
                         <button ng-click="umBin()"  id="key1" data-rnc-tag="1"  class="button button-calm">1</button>
-                        <button ng-click="clear()"  id="keyC" data-rnc-tag="C"  class="button button-calm">CE</button>  
                 </div>
                 
             </div> 
@@ -74,7 +74,6 @@
                 <div id="keypad2">
                     <button ng-click="umOctal()"    id="key1" data-rnc-tag="1"   class="button button-calm">1</button>
                     <button ng-click="zeroOctal()"  id="key0" data-rnc-tag="0"   class="button button-calm">0</button>        
-                    <button ng-click="clear()"      id="keyC" data-rnc-tag="C"   class="button button-calm">CE</button>  
                 </div>
                 
         
@@ -113,9 +112,6 @@
                         <button ng-click="tresHexade()"  id="key3" data-rnc-tag="3"   class="button button-calm">3</button>
                 
                 </div>  
-                <div id="keypad2">
-                        <button ng-click="clear()"       id="keyC" data-rnc-tag="C"   class="button button-calm">CLEAR</button>
-                </div>
             </div-->
     </ion-content>
 </ion-view>
